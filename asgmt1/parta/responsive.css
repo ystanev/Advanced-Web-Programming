@@ -1,0 +1,30 @@
+@media (max-width: 480px){
+    #menu li {
+        display: block;
+        background-color: green;
+        padding: 50px 50px 50px 50px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    h2{
+        color: green;
+    }
+
+    header{
+        text-transform: uppercase;
+        font-style: italic;
+    }
+
+    img{
+        visibility: hidden;
+    }
+
+    #articles, #sidebar{
+        display: block;
+        float: none;
+    }
+
+    p{
+        font-size: 24px;
+    }
+}
