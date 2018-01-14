@@ -38,7 +38,7 @@
                 }
                 else{
                     //Checking Username length.
-                    if(name.length<5 && name.length>15){
+                    if(name.length<5 || name.length>15){
                         document.getElementById("name_form").className = "form-group has-error";
                         error+="Required length is 5-15 characters. " + "<br />";
                     }
@@ -51,9 +51,9 @@
                 document.getElementById("password_form").className = "form-group has-error";
                 error += "Enter a Password. " + "<br />";
             }
-            else{
+            /*else{
                 document.getElementById("password_form").className = "form-group has-success";
-            }
+            }*/
             if(confirm == ""){
                 document.getElementById("confirm_form").className = "form-group has-error";
                 error += "Confirm Password. " + "<br />";
@@ -82,7 +82,7 @@
                 }
                 else{
                     //Checking Age range
-                    if(age < 18 && age > 110){
+                    if(age < 18 || age > 110){
                         document.getElementById("age_form").className = "form-group has-error";
                         error += "Age is out of range. " + "<br />";
                     }
