@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS `cats`;
+
+CREATE TABLE `cats` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) default NULL,
+  `breed` varchar(50) default NULL,
+  `owner` varchar(50) default NULL,
+  `imageurl` varchar(300) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+/*Data for the table `cats` */
+
+insert  into `cats`(`id`,`name`,`breed`,`owner`,`imageurl`) values (1,'Garfield','Arabian Mau','John','http://upload.wikimedia.org/wikipedia/commons/thumb/5/53/3yoArabianMau.jpeg/1024px-3yoArabianMau.jpeg');
+insert  into `cats`(`id`,`name`,`breed`,`owner`,`imageurl`) values (2,'Marbles','Asian Semi-longhair','Sally','http://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Tiffanie_at_cat_show.jpg/640px-Tiffanie_at_cat_show.jpg');
+insert  into `cats`(`id`,`name`,`breed`,`owner`,`imageurl`) values (3,'Scruffy','Manx','Tim','http://i.dailymail.co.uk/i/pix/2014/10/15/1413408700148_wps_39_image001_jpg.jpg');
+insert  into `cats`(`id`,`name`,`breed`,`owner`,`imageurl`) values (4,'Hairy','Persian','Jane','http://upload.wikimedia.org/wikipedia/commons/8/81/Persialainen.jpg');;
+insert  into `cats`(`id`,`name`,`breed`,`owner`,`imageurl`) values (5,'Stewart','Sphinx','Bob','http://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Sphinx2_July_2006.jpg/640px-Sphinx2_July_2006.jpg');
+
