@@ -22,7 +22,7 @@ function getPhoneBook($conn){
 }
 
 //Delete record from the database
-function deletePhone($conn, $phoneid){
+function deletePhone($conn, $phoneid){ // Check functionality
     try{
         //deleting a record from database
         $stmt = $conn->prepare("DELETE FROM phonebook WHERE id=?");
@@ -79,5 +79,9 @@ function editPhone($conn, $phoneid,$fname, $lname, $phone, $email,
         echo "editPhone failed: " . $e->getMessage();
         exit();
     }
+}
+
+function sortPhone($conn){
+
 }
 ?>

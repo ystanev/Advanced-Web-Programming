@@ -20,6 +20,7 @@
             <th>MC</th>
             <th>Position</th>
             <th>Department</th>
+            <th>Delete</th>
         </tr>
         <?
         ini_set('display_errors', 1); error_reporting(~0);
@@ -35,7 +36,7 @@
                 <td><?= $phonedata["mc"] ?></td>
                 <td><?= $phonedata["pos"] ?></td>
                 <td><?= $phonedata["dept"] ?></td>
-                <td><a href="crud.crtl.php?act=delete$id=<?= $phonedata["id"] ?>">DELETE</a></td>
+                <td><a href="crud.crtl.php?act=delete&id=<?= $phonedata["id"] ?>">DELETE</a></td>
             </tr>
             <?
         }
