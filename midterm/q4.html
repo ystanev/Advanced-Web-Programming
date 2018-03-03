@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4</title>
+    <!--Importing Plugins-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true&key=AIzaSyD3HfNWR5FzuvRSEA6ZEtksEpgnxiTpkdo"></script>
+    <script type="text/javascript" src="gmaps.js"></script>
+
+    <style>
+        #map{
+            width: 600px;
+            height: 600px;
+            margin: auto auto;
+            position: center;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+<!--Navigation-->
+<button type="button" id="school">McMaster University</button>
+<button type="button" id="location">My Location</button><br><br>
+
+<div id="map">
+    <script>
+        $(document).ready(function (){
+            var map = new GMaps({ div: '#map',  lat: 43.260900, lng: -79.919200 }); //Creates new map.
+
+            //Geolocation
+            $("#location").click(
+                function (){
+                    GMaps.geolocate({
+                        success: function(position) {
+                            map.setCenter(position.coords.latitude, position.coords.longitude);
+
+                            //Adds the marker for the current position
+                            map.addMarker({
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude,
+                                title: "Current Location",
+                                infoWindow:{
+                                    content: '<h3>Current Location</h3>'
+                                }
+                            })
+                        },
+                        error: function(error) {
+                            alert('Geolocation failed: '+error.message);
+                        },
+                        not_supported: function() {
+                            alert("Your browser does not support geolocation");
+                        },
+                        always: function() {
+                            alert("Done!");
+                        }
+                    });
+                }
+            );
+
+            //McMaster University
+            $("#school").click(
+                function (){
+                    map.addMarker({
+                        lat: 43.260900,
+                        lng: -79.919200,
+                        title: "McMaster University",
+                        infoWindow:{
+                            content: '<h4>McMaster University</h4>' + '<address>' + '1280 Main St W, <br>Hamilton, ON L8S 4L8' + '</address>'
+                        }
+                    })
+                    map.setCenter(43.260900, -79.919200); //Shifts the map to McMaster University
+                    map.zoomIn(2);
+                }
+            );
+        });
+    </script>
+</div>
+</body>
+</html>

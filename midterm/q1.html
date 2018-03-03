@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        li{
+            color: red;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var username = $("#un").val();
+            var password = $("#pass").val();
+            var age = $("#age").val();
+            var pcode = $("#pcode").val();
+            var error = "";
+
+            if(username.length<8 || username.length>15){
+                error+= "The username must be between 8 to 15 characters in length.";
+            }
+            if(password.length<6 || password.length>12){
+                error+= "The password must be between 6 and 12 characters in length.";
+            }
+            if(age<18){
+                error+= "The age entered must be greater than 18.";
+            }
+            if(pcode.length != 6){
+                error += "The postal code must be exactly 6 characters in length.";
+            }
+
+            if(error){
+                $("#errors").html("<ul>" + "<li>" + error + "</li>" +"</ul>");
+            }
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" name="username" id="un" placeholder="Username"><br>
+    <input type="text" name="password" id="pass" placeholder="Password"><br>
+    <input type="text" name="age" id="age" placeholder="Age"><br>
+    <input type="text" name="postal_code" id="pcode" placeholder="Postal Code"><br><br>
+    <input type="button" value="Submit" id="sub" onclick="validateForm()"><br>
+</form>
+
+<div id="errors"></div>
+</body>
+</html>
